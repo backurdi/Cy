@@ -44,18 +44,24 @@ module.exports = {
 			chunks: ['index']
 		}),
 		new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        }),
-        new MiniCssExtractPlugin({
-            filename: "[name].sass",
-            chunkFilename: "[id].sass"
-        }),
+			filename: "[name].css",
+			chunkFilename: "[id].css"
+		}),
+		new MiniCssExtractPlugin({
+			filename: "[name].sass",
+			chunkFilename: "[id].sass"
+		}),
+
+		//Navigation
+		new HtmlWebpackPlugin({
+			filename: 'nav.html',
+			template: './src/reusable/nav.html',
+			chunks: ['babel']
+		}),
 	],
 
 	module: {
-		rules: [
-			{
+		rules: [{
 				test: /.(js|jsx)$/,
 				include: [path.resolve(__dirname, 'src')],
 				loader: 'babel-loader',
@@ -74,21 +80,21 @@ module.exports = {
 				}
 			},
 			{
-                test: /\.(s*)css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.(gif|png|jpe?g|svg)$/i,
-                use: [
-                  'file-loader',
-                  {
-                    loader: 'image-webpack-loader',
-                    options: {
-                      disable: true, // webpack@2.x and newer
-                    },
-                  },
-                ],
-              }
+				test: /\.(s*)css$/,
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.(gif|png|jpe?g|svg)$/i,
+				use: [
+					'file-loader',
+					{
+						loader: 'image-webpack-loader',
+						options: {
+							disable: true, // webpack@2.x and newer
+						},
+					},
+				],
+			}
 		]
 	},
 
