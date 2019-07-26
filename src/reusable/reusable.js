@@ -1,5 +1,3 @@
-import $ from 'jquery'
-
 export const nav = (el, path) => {
 
   fetch(path)
