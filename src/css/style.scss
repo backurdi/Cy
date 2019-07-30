@@ -347,7 +347,83 @@ body {
 
 footer {
   background-color: rgb(114, 114, 114);
-  height: 40vh;
+  height: 25vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding: 0 100px;
+
+  & > div {
+    padding-top: 40px;
+  }
+
+  .left {
+    & > div {
+      width: 100%;
+      padding: 15px 0;
+      border-bottom: 1px solid #fff;
+      max-width: 372px;
+    }
+
+    & :last-child {
+      border-bottom: none;
+    }
+
+    .img-container {
+      img {
+        width: 50%;
+      }
+    }
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    div {
+      align-self: center;
+      h3 {
+        font-size: 15px;
+        border-bottom: 1px solid #fff;
+        width: 200%;
+      }
+
+      ul {
+        margin-top: 20px;
+
+        li {
+          list-style: none;
+          margin-bottom: 10px;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+
+    & * {
+      font-size: 20px;
+      padding: 15px 0;
+      font-weight: 300;
+      border-bottom: 1px solid #fff;
+      align-self: flex-end;
+    }
+
+    & > div,
+    & :last-child {
+      border-bottom: none;
+    }
+  }
+  .credentials {
+    grid-column: 2/3;
+    text-align: center;
+    font-size: 150%;
+  }
 }
