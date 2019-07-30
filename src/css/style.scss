@@ -315,7 +315,7 @@ body {
     flex-direction: column;
     margin: 0 auto;
 
-    input {
+    input[type='text'] {
       padding: 25px;
       margin-bottom: 10px;
       border: 2px solid #181240;
@@ -326,10 +326,28 @@ body {
       font-size: 15px;
       font-weight: 600;
     }
+    .submit {
+      padding: 15px;
+      margin-bottom: 10px;
+      border: 2px solid #181240;
+      background-color: #181240;
+      border-radius: 50px;
+      width: 30%;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.5s;
+    }
+    .submit:hover {
+      cursor: pointer;
+      background: #fff;
+      color: #181240;
+    }
   }
 }
 
 footer {
   background-color: rgb(114, 114, 114);
   height: 40vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
