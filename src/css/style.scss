@@ -1,100 +1,46 @@
-:root {
-  --section-rotate: 9vw;
-}
-
-::-moz-selection {
-  background-color: #55c57a;
-  color: #fff;
-}
-
-::selection {
-  background-color: #55c57a;
-  color: #fff;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  line-height: 1.2;
-  font-weight: 300;
-  font-family: 'Lato', sans-serif;
-  color: #fff;
-  min-height: 100vh;
-}
+@import "mixin";
+@import "reusable";
 
 .hero {
-  background: url('./../img/top-form.png');
-  background-position-y: -70px;
+  background: linear-gradient(to right top, $primary-purple, $primary-blue);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100%;
+  height: 130%;
   min-height: 100vh;
-  padding: 0 100px;
-
-  //NAVIGATION
-  #nav {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    padding: 40px 0;
-
-    img {
-      width: 160px;
-    }
-
-    ul {
-      list-style: none;
-      grid-column: 9/-1;
-      li {
-        float: left;
-        margin-left: 60px;
-        a {
-          color: #fff;
-          text-decoration: none;
-          font-size: 15px;
-          padding: 5px 8px;
-          transition: 0.3s;
-          border-radius: 20px;
-        }
-
-        a:hover {
-          background: #fff;
-          color: #181240;
-        }
-      }
-    }
-  }
+  // padding: 0 100px;
+  position: relative;
+  // overflow: hidden;
 
   //HERO SECTION
   .hero-section {
-    margin: 150px 0 300px 0;
+    margin: 80px auto 300px auto;
     display: grid;
     grid-template-columns: 3fr 2fr;
+    position: relative;
+    z-index: 2;
+    width: 85%;
+
     .text {
       h1 {
-        font-size: 10em;
-        font-weight: 400;
+        font-size: 6em;
+        font-weight: 600;
       }
+
+      @include respond(phone) {
+        h1 {
+          font-size: 1em;
+        }
+      }
+
       h3 {
-        margin-top: 50px;
-        width: 50%;
-        font-size: 35px;
+        margin-top: 70px;
+        width: 80%;
+        font-size: 25px;
         font-weight: 300;
-        margin-bottom: 80px;
+        margin-bottom: 60px;
       }
+
       a {
         border: 1px solid #fff;
         color: #fff;
@@ -104,12 +50,34 @@ body {
         padding: 15px 30px;
         transition: 0.5s;
       }
+
       a:hover {
         background-color: #fff;
         color: #181240;
       }
     }
+
+    .image-container {
+      img {
+        width: 100%;
+      }
+    }
   }
+}
+
+.hero:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 10px;
+  background-image: url('../img/white-space.svg');
+  height: 93%;
+  z-index: 0;
+
+
 }
 
 //PROCES
@@ -119,13 +87,14 @@ body {
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain;
-  background-position-y: 110px;
+  background-position-y: 75px;
   margin: 0px 100px 40px 100px;
   color: #000;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3 1fr);
-  grid-row-gap: 150px;
+  grid-row-gap: 50px;
+  z-index: 200;
+  position: relative;
 
   h1 {
     font-size: 30px;
@@ -138,18 +107,19 @@ body {
   }
 
   img {
-    width: 40%;
+    width: 50%;
   }
 
   .proces-section1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
-    margin-top: -255px;
-    grid-row-gap: 110px;
+    margin-top: -155px;
+    grid-row-gap: 80px;
 
     .situation1 {
       grid-row: 1/2;
+
       .text {
         display: flex;
         justify-content: flex-end;
@@ -166,9 +136,10 @@ body {
     .situation2 {
       grid-column: 2/3;
       grid-row: 2/3;
-      grid-column-gap: 200px;
+      grid-column-gap: 70px;
       display: flex;
       justify-content: space-between;
+
       .text {
         align-self: center;
         flex-shrink: 1;
@@ -182,26 +153,30 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
-    grid-row-gap: 100px;
+    grid-row-gap: 50px;
 
     .situation1 {
       grid-row: 1/2;
       display: flex;
       justify-content: space-between;
+
       .text {
         align-self: flex-end;
         margin-right: -200px;
         width: 500px;
       }
+
       img {
         width: 35%;
       }
     }
+
     .situation2 {
       grid-column: 2/3;
       grid-row: 2/3;
       display: flex;
       justify-content: space-between;
+
       .text {
         align-self: flex-end;
         margin-left: -200px;
@@ -238,16 +213,20 @@ body {
   padding: 100px 100px;
   margin-top: 100px;
   grid-template-columns: 1fr 1fr;
+  position: relative;
+
   .text {
     h1 {
       font-size: 400%;
     }
+
     p {
       margin-top: 40px;
       font-size: 18px;
       line-height: 1.9;
     }
   }
+
   .img-container {
     .profil-background {
       background: url('./../img/profil-background.png');
@@ -263,13 +242,27 @@ body {
   }
 }
 
+.omOs:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: url('../img/curved-background-top.svg');
+  height: 150px;
+  z-index: 193;
+  margin-bottom: -100px;
+}
+
 //JOIN
 .join {
   .join-background {
-    background: url('./../img/curved.svg');
+    background: linear-gradient($primary-purple, $primary-blue);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 10% 0;
+    padding: 10% 0 15% 0;
+    position: relative;
+
     h1 {
       font-size: 700%;
       font-weight: 300;
@@ -277,6 +270,7 @@ body {
       width: 35%;
       margin: 0 auto;
     }
+
     a {
       color: #fff;
       display: table;
@@ -288,10 +282,24 @@ body {
       border-radius: 50px;
       transition: 0.5s;
     }
+
     a:hover {
       background: #fff;
       color: #181240;
     }
+  }
+
+  .join-background:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 10px;
+    background-image: url('../img/curved-background-bottom.svg');
+    height: 200px;
+    z-index: 0;
   }
 }
 
@@ -309,6 +317,7 @@ body {
     margin-bottom: 30px;
     color: #e6ac5a;
   }
+
   form {
     width: 60%;
     display: flex;
@@ -321,11 +330,13 @@ body {
       border: 2px solid #181240;
       border-radius: 50px;
     }
+
     ::placeholder {
       color: #181240;
       font-size: 15px;
       font-weight: 600;
     }
+
     .submit {
       padding: 15px;
       margin-bottom: 10px;
@@ -337,6 +348,7 @@ body {
       font-weight: 500;
       transition: 0.5s;
     }
+
     .submit:hover {
       cursor: pointer;
       background: #fff;
@@ -345,85 +357,125 @@ body {
   }
 }
 
-footer {
-  background-color: rgb(114, 114, 114);
-  height: 25vh;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 0 100px;
+//////////////////////// OM OS ////////////////////////
 
-  & > div {
-    padding-top: 40px;
+.om {
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #000;
   }
 
-  .left {
-    & > div {
-      width: 100%;
-      padding: 15px 0;
-      border-bottom: 1px solid #fff;
-      max-width: 372px;
-    }
-
-    & :last-child {
-      border-bottom: none;
-    }
-
-    .img-container {
-      img {
-        width: 50%;
-      }
-    }
-  }
-
-  .center {
+  .text-container {
+    color: #000;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    div {
-      align-self: center;
-      h3 {
-        font-size: 15px;
-        border-bottom: 1px solid #fff;
-        width: 200%;
-      }
+    height: 570px;
+    padding: 60px 100px;
+    justify-content: space-between;
 
-      ul {
-        margin-top: 20px;
-
-        li {
-          list-style: none;
-          margin-bottom: 10px;
-
-          a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 15px;
-          }
-        }
-      }
+    p {
+      font-size: 2rem;
+      width: 45%;
     }
-  }
 
-  .right {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
+    .text-top {
+      color: #000;
+      align-self: flex-start;
+    }
 
-    & * {
-      font-size: 20px;
-      padding: 15px 0;
-      font-weight: 300;
-      border-bottom: 1px solid #fff;
+    .text-bottom {
+      color: #fff;
       align-self: flex-end;
     }
 
-    & > div,
-    & :last-child {
-      border-bottom: none;
+    .background-blob {
+      background: url('./../img/blob.png');
+      height: 100%;
+      width: 55%;
+      background-size: cover;
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+      z-index: -1;
     }
   }
-  .credentials {
-    grid-column: 2/3;
+}
+
+.team {
+  margin-top: 40px;
+  padding: 0 100px;
+
+  h1 {
+    font-size: 30px;
+    color: #000;
     text-align: center;
-    font-size: 150%;
+  }
+
+  #members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .member-box {
+      margin: 20px;
+      padding: 40px;
+      border-radius: 20px;
+      background: linear-gradient(to right bottom,
+          $primary-purple,
+          $primary-blue);
+
+      .avatar {
+        margin: 3px;
+        width: 100%;
+        padding-top: 100%;
+        background-size: cover;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #E6AC5A;
+
+        -webkit-box-shadow: 13px 17px 24px -1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 13px 17px 24px -1px rgba(0, 0, 0, 0.75);
+        box-shadow: 13px 17px 24px -1px rgba(0, 0, 0, 0.75);
+
+        .avatar-text {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 20%;
+          text-align: center;
+          background-color: rgba(147, 147, 147, 0.6);
+        }
+      }
+
+      .link-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+        a {
+          :hover {
+            background-color: #fff;
+            fill: #E6AC5A;
+            border-radius: 5px;
+          }
+        }
+
+        svg {
+          fill: #fff;
+          width: 40%;
+          height: 40px;
+        }
+
+        .linkedIn-icon {
+          padding: 7px;
+          float: right;
+        }
+
+        .email-icon {
+          float: left;
+        }
+      }
+    }
   }
 }

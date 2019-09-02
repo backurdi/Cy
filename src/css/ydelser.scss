@@ -1,0 +1,53 @@
+@import "mixin";
+@import "reusable";
+
+header {
+    background: linear-gradient(to right top, $primary-purple, $primary-blue);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 10px;
+        background-image: url('../img/blob2.svg');
+        height: 93%;
+        z-index: 0;
+    }
+
+    h1 {
+        align-self: flex-end;
+        text-align: right;
+        font-size: 5rem;
+        width: 40%;
+        padding: 100px 100px 200px 0;
+    }
+}
+
+.content {
+    width: 70%;
+    margin: 30px auto;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+            padding: 0px 15px;
+            width: 208px;
+
+            a {
+                text-decoration: none;
+                color: $primary-blue;
+                font-size: 2rem;
+            }
+        }
+    }
+
+}

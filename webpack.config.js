@@ -30,6 +30,7 @@ module.exports = {
   entry: {
     babel: 'babel-polyfill',
     index: './src/js/index.js',
+    ydelser: './src/js/ydelser.js'
   },
 
   output: {
@@ -42,6 +43,16 @@ module.exports = {
       filename: 'index.html',
       template: './src/html/index.html',
       chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'om',
+      template: './src/html/om.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'ydelser',
+      template: './src/html/ydelser.html',
+      chunks: ['ydelser']
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -66,8 +77,7 @@ module.exports = {
   ],
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /.(js|jsx)$/,
         include: [path.resolve(__dirname, 'src')],
         loader: 'babel-loader',
@@ -97,7 +107,7 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          'file-loader',
+          'url-loader',
           {
             loader: 'image-webpack-loader',
             options: {
