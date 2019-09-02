@@ -1,18 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1980" height="782.205" viewBox="0 0 1980 782.205">
-  <defs>
-    <linearGradient id="linear-gradient" x1="0.308" y1="-0.087" x2="0.971" y2="1.513" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#0b0724"/>
-      <stop offset="1" stop-color="#3d3088"/>
-    </linearGradient>
-    <filter id="Path_507" x="0" y="0" width="1980" height="782.205" filterUnits="userSpaceOnUse">
-      <feOffset dy="80" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_507)">
-    <path id="Path_507-2" data-name="Path 507" d="M0-17.437S510.023-122.581,990.023-122.581,1920-17.437,1920-17.437V549.624S1435,462.6,955,462.6,0,549.624,0,549.624Z" transform="translate(30 122.58)" fill="url(#linear-gradient)"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1980 782.2" style="enable-background:new 0 0 1980 782.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#Path_507);}
+	.st1{fill:url(#Path_507-2_2_);}
+</style>
+<filter  filterUnits="userSpaceOnUse" height="782.205" id="Path_507" width="1980" x="0" y="0">
+	<feOffset  dy="80" input="SourceAlpha"></feOffset>
+	<feGaussianBlur  result="blur" stdDeviation="10"></feGaussianBlur>
+	<feFlood  flood-opacity="0.161"></feFlood>
+	<feComposite  in2="blur" operator="in"></feComposite>
+	<feComposite  in="SourceGraphic" operator="over"></feComposite>
+</filter>
+<g transform="matrix(1, 0, 0, 1, 0, 0)" class="st0">
+	
+		<linearGradient id="Path_507-2_2_" gradientUnits="userSpaceOnUse" x1="683.8784" y1="788.0562" x2="684.5472" y2="786.4422" gradientTransform="matrix(1920 0 0 -672.205 -1312566 529693.5625)">
+		<stop  offset="0" style="stop-color:#0B0724"/>
+		<stop  offset="1" style="stop-color:#3D3088"/>
+	</linearGradient>
+	<path id="Path_507-2_1_" class="st1" d="M0,105.1C0,105.1,526,0,1021,0s959,105.1,959,105.1v567.1c0,0-500.2-87-995.2-87
+		S0,672.2,0,672.2V105.1z"/>
+</g>
 </svg>
