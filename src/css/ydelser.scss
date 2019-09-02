@@ -1,53 +1,123 @@
-@import "mixin";
-@import "reusable";
+@import 'mixin';
+@import 'reusable';
 
 header {
-    background: linear-gradient(to right top, $primary-purple, $primary-blue);
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  background: linear-gradient(
+    to right top,
+    $primary-purple,
+    $primary-blue
+  );
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position-y: 10px;
-        background-image: url('../img/blob2.svg');
-        height: 93%;
-        z-index: 0;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 10px;
+    background-image: url('../img/blob2.svg');
+    height: 87%;
+    z-index: 0;
+  }
 
-    h1 {
-        align-self: flex-end;
-        text-align: right;
-        font-size: 5rem;
-        width: 40%;
-        padding: 100px 100px 200px 0;
-    }
+  h1 {
+    align-self: flex-end;
+    text-align: right;
+    font-size: 5rem;
+    width: 40%;
+    padding: 100px 100px 200px 0;
+  }
 }
 
 .content {
-    width: 70%;
-    margin: 30px auto;
+  width: 90%;
+  margin: 30px auto;
 
+  .toggle-nav {
     ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        border: 1px solid #000;
+        border-radius: 10px;
+        padding: 20px 15px;
+        width: 208px;
+        margin-right: 10px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
 
-        li {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
-            padding: 0px 15px;
-            width: 208px;
-
-            a {
-                text-decoration: none;
-                color: $primary-blue;
-                font-size: 2rem;
-            }
+        a {
+          text-decoration: none;
+          color: $primary-blue;
+          font-size: 1.9rem;
         }
-    }
 
+        &:hover {
+          background-image: linear-gradient(
+            to bottom right,
+            #e09187,
+            #e6b267,
+            #e7e3ce
+          );
+          border: 1px solid transparent;
+        }
+        &:hover a {
+          color: #fff;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  .content-main {
+    margin-top: 60px;
+    display: flex;
+
+    .content-text {
+      flex: 0 1 70%;
+      padding: 60px 0;
+      margin-left: 40px;
+
+      p {
+        color: #000;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .read-more {
+        margin-top: 60px;
+
+        a {
+          background-image: linear-gradient(
+            to bottom right,
+            $primary-blue,
+            $primary-purple
+          );
+          padding: 10px 20px;
+          color: #fff;
+          text-decoration: none;
+          font-size: 15px;
+          border-radius: 5px;
+        }
+      }
+    }
+    .content-img {
+      background-image: url(../img/profil-background.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 50px;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
