@@ -30,56 +30,13 @@
     </section>
     <section class="team">
         <h1>Teamet</h1>
-        <div class="members">
-            <div class="member-box">
-                <div class="avatar">
-                    <div class="avatar-text">
-                        <h3>Linnea Harris</h3>
-                        <p>Revisor</p>
-                    </div>
-                </div>
-                <div>
-                    <a>
-                        <svg class="linkedIn-icon">
-                            <use xlink:href="../img/sprite.svg#icon-linkedin" />
-                        </svg>
-                    </a>
-                    <a></a>
-                </div>
-            </div>
+        <div id="members">
 
-            <div class="member-box">
-                <div class="avatar">
-                    <div class="avatar-text">
-                        <h3>Linnea Harris</h3>
-                        <p>Revisor</p>
-                    </div>
-                </div>
-                <div>
-                    <a></a>
-                    <a></a>
-                </div>
-            </div>
-
-            <div class="member-box">
-                <div class="avatar">
-                    <div class="avatar-text">
-                        <h3>Linnea Harris</h3>
-                        <p>Revisor</p>
-                    </div>
-                </div>
-                <div class="link-container">
-                    <svg class="linkedIn-icon">
-                        <use xlink:href="../img/sprite.svg#icon-linkedin" />
-                    </svg>
-                    <a></a>
-                </div>
-            </div>
         </div>
     </section>
 
     <div id="footer"></div>
     <script src="" async defer></script>
-<script type="text/javascript" src="index.3dc6c979ab5eeb535889.js"></script></body>
+<script type="text/javascript" src="index.418e27099760d964a98e.js"></script></body>
 
 </html>

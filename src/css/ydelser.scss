@@ -45,9 +45,6 @@ header {
       li {
         border: 1px solid #000;
         border-radius: 10px;
-        padding: 20px 15px;
-        width: 208px;
-        margin-right: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -56,20 +53,23 @@ header {
           text-decoration: none;
           color: $primary-blue;
           font-size: 1.9rem;
+          padding: 20px 15px;
+          width: 208px;
+          margin-right: 10px;
+          text-align: center;
         }
-
-        &:hover {
-          background-image: linear-gradient(
-            to bottom right,
-            #e09187,
-            #e6b267,
-            #e7e3ce
-          );
-          border: 1px solid transparent;
-        }
-        &:hover a {
-          color: #fff;
-        }
+      }
+      .active {
+        background-image: linear-gradient(
+          to bottom right,
+          #e09187,
+          #e6b267,
+          #e7e3ce
+        );
+        border: 1px solid transparent;
+      }
+      .active a {
+        color: #fff;
       }
 
       &:last-child {
@@ -78,9 +78,10 @@ header {
     }
   }
 
-  .content-main {
+  #content-main {
     margin-top: 60px;
     display: flex;
+    transition: all 5s;
 
     .content-text {
       flex: 0 1 70%;
@@ -115,6 +116,7 @@ header {
       background-size: cover;
       background-repeat: no-repeat;
       padding: 50px;
+      transition: all 5s;
       img {
         width: 100%;
       }
