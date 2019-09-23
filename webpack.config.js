@@ -30,7 +30,8 @@ module.exports = {
   entry: {
     babel: 'babel-polyfill',
     index: './src/js/index.js',
-    ydelser: './src/js/ydelser.js'
+    ydelser: './src/js/ydelser.js',
+    videnscenter: './src/js/videnscenter.js',
   },
 
   output: {
@@ -53,6 +54,11 @@ module.exports = {
       filename: 'ydelser',
       template: './src/html/ydelser.html',
       chunks: ['ydelser']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'videnscenter',
+      template: './src/html/videnscenter.html',
+      chunks: ['videnscenter']
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

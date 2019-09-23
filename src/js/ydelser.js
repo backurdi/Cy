@@ -46,7 +46,9 @@ const serviceList = [{
 
 for (let i = 0; i < link.length; i++) {
   link[i].addEventListener('mouseenter', (el) => {
-    linkSelect(el);
+    if (!el.target.parentNode.classList.contains('active')) {
+      linkSelect(el);
+    }
   });
 }
 
@@ -57,12 +59,12 @@ const linkSelect = (el) => {
   const selectedLink = el.target.dataset.id;
   // console.log(selectedLink);
   const contentImg = `
-    <div class="content-img" style="opacity: 0">
+    <div class="content-img">
         <img src="${serviceList[0][selectedLink].img}" alt="">
     </div>
   `
   const contentText = `
-  <div class="content-text" style="opacity: 0">
+  <div class="content-text">
       <p>
       ${serviceList[0][selectedLink].content}
       </p>
@@ -85,6 +87,12 @@ const linkSelect = (el) => {
   }
 
   for (let i = 0; i < contentContainer.children.length; i++) {
-    contentContainer.children[i].style.opacity = 1;
+    contentContainer.children[i].animate([{
+      opacity: 0
+    }, {
+      opacity: 1
+    }], {
+      duration: 500
+    });
   }
 }
