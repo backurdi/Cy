@@ -1,5 +1,5 @@
-@import 'mixin';
-@import 'reusable';
+@import "mixin";
+@import "reusable";
 
 header {
   background: linear-gradient(to right top,
@@ -10,14 +10,14 @@ header {
   flex-direction: column;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: 10px;
-    background-image: url('../img/blob2.svg');
+    background-image: url("../img/blob2.svg");
     height: 87%;
     z-index: 0;
   }
@@ -118,6 +118,10 @@ header {
       img {
         width: 100%;
       }
+    }
+
+    .transparent {
+      opacity: 0;
     }
   }
 }
